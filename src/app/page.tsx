@@ -60,16 +60,16 @@ export default function Home() {
   return (
     <>
       <nav className="fixed inset-x-0 top-0 z-50 border-b border-outline-variant/40 bg-surface/80 backdrop-blur-xl">
-        <div className="mx-auto flex w-full max-w-max-width items-center justify-between px-margin-desktop py-4">
+        <div className="mx-auto flex w-full max-w-max-width items-center justify-between gap-4 px-margin-desktop py-3 sm:py-4">
           <div className="flex items-center gap-3">
             <Image
               alt="Palimpsest Logo"
-              className="h-11 w-11 rounded-lg"
+              className="h-9 w-9 rounded-lg sm:h-11 sm:w-11"
               height={44}
               src={appIconUrl}
               width={44}
             />
-            <span className="font-headline-lg text-[20px] tracking-tighter text-on-surface">
+            <span className="font-headline-lg text-[18px] tracking-tighter text-on-surface sm:text-[20px]">
               Palimpsest
             </span>
           </div>
@@ -99,40 +99,40 @@ export default function Home() {
               FAQ
             </a>
           </div>
-          <button className="rounded-full bg-primary px-6 py-2.5 font-body-md text-sm font-bold text-on-primary transition-all hover:scale-105 active:scale-95">
+          <button className="shrink-0 rounded-full bg-primary px-4 py-2.5 font-body-md text-xs font-bold text-on-primary transition-all hover:scale-105 active:scale-95 sm:px-6 sm:text-sm">
             Download Beta
           </button>
         </div>
       </nav>
 
-      <header className="relative mx-auto max-w-[1000px] px-margin-desktop pb-32 pt-48 text-center">
+      <header className="relative mx-auto max-w-[1000px] px-margin-desktop pb-20 pt-36 text-center sm:pb-24 sm:pt-44 md:pb-32 md:pt-48">
         <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-container/30 px-3 py-1">
           <span className="node-pulse h-2 w-2 rounded-full bg-secondary-container" />
           <span className="font-label-mono text-label-mono uppercase text-primary">
             v0.8.2 Now Local
           </span>
         </div>
-        <h1 className="mb-8 font-display-lg text-display-lg leading-[1.05] text-on-surface">
+        <h1 className="mb-6 font-display-lg text-[clamp(2.35rem,11vw,3rem)] leading-[1.05] text-on-surface sm:mb-8 md:text-display-lg">
           Your private memory, searchable <br className="hidden md:block" /> on your own
           machine.
         </h1>
-        <p className="mx-auto mb-12 max-w-[720px] font-body-md text-[20px] leading-relaxed text-on-surface-variant">
+        <p className="mx-auto mb-10 max-w-[720px] font-body-md text-base leading-relaxed text-on-surface-variant sm:mb-12 sm:text-lg md:text-[20px]">
           Palimpsest captures your notes, files, screenshots, audio, and video, then turns
           them into a local AI memory you can search, question, and map without sending your
           data to the cloud.
         </p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="rounded-full bg-primary px-10 py-4 font-body-md font-bold text-on-primary shadow-xl shadow-primary/10 transition-all hover:brightness-110">
+          <button className="w-full rounded-full bg-primary px-8 py-4 font-body-md font-bold text-on-primary shadow-xl shadow-primary/10 transition-all hover:brightness-110 sm:w-auto sm:px-10">
             Download Beta
           </button>
-          <button className="rounded-full border border-outline-variant/40 bg-on-surface/5 px-10 py-4 font-body-md text-on-surface backdrop-blur-md transition-all hover:bg-on-surface/10">
+          <button className="w-full rounded-full border border-outline-variant/40 bg-on-surface/5 px-8 py-4 font-body-md text-on-surface backdrop-blur-md transition-all hover:bg-on-surface/10 sm:w-auto sm:px-10">
             See how it works
           </button>
         </div>
 
-        <div className="relative mt-24">
+        <div className="relative mt-16 sm:mt-20 md:mt-24">
           <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" />
-          <div className="glass-panel flex aspect-[16/9] items-center justify-center overflow-hidden rounded-2xl border-outline-variant/40 p-4">
+          <div className="glass-panel flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border-outline-variant/40 p-2 sm:aspect-[16/9] sm:p-4">
             <div className="relative flex h-full w-full items-center justify-center rounded-xl bg-surface-container">
               <div className="absolute inset-0 overflow-hidden opacity-20">
                 <div className="constellation-line absolute left-0 top-1/4 w-full" />
@@ -150,10 +150,10 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="bg-surface-container-lowest px-margin-desktop py-32">
-        <div className="mx-auto flex max-w-max-width flex-col items-center gap-16 md:flex-row">
+      <section className="bg-surface-container-lowest px-margin-desktop py-20 md:py-32">
+        <div className="mx-auto flex max-w-max-width flex-col items-center gap-12 md:flex-row md:gap-16">
           <div className="w-full md:w-1/2">
-            <h2 className="mb-6 font-headline-lg text-headline-lg text-on-surface">
+            <h2 className="mb-5 font-headline-lg text-headline-lg-mobile text-on-surface sm:text-headline-lg md:mb-6">
               Context is scattered. <br />
               <span className="text-secondary-container">Memory is finite.</span>
             </h2>
@@ -163,7 +163,7 @@ export default function Home() {
               months ago or a PDF you skimmed last Tuesday, traditional search fails you.
             </p>
           </div>
-          <div className="grid w-full grid-cols-2 gap-4 md:w-1/2">
+          <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:w-1/2">
             <MetricCard icon="tab" label="SCATTERED" text="60+ browser tabs open weekly" />
             <MetricCard
               colorClass="text-secondary-container"
@@ -187,16 +187,16 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-max-width px-margin-desktop py-32" id="process">
-        <div className="mb-24 text-center">
-          <h2 className="mb-4 font-headline-lg text-headline-lg">
+      <section className="mx-auto max-w-max-width px-margin-desktop py-20 md:py-32" id="process">
+        <div className="mb-16 text-center md:mb-24">
+          <h2 className="mb-4 font-headline-lg text-headline-lg-mobile sm:text-headline-lg">
             Architecture of Remembrance
           </h2>
           <div className="mx-auto h-1 w-24 rounded-full bg-primary" />
         </div>
         <div className="relative">
-          <div className="absolute bottom-0 left-8 top-0 w-px bg-outline-variant/40 md:hidden" />
-          <div className="space-y-24">
+          <div className="absolute bottom-0 left-7 top-0 w-px bg-outline-variant/40 md:hidden" />
+          <div className="space-y-14 md:space-y-24">
             <ProcessStep
               accent="primary"
               body="Seamlessly ingest notes, PDF documents, screen recordings, and audio files. Palimpsest acts as a silent observer, indexing the layers of your digital life."
@@ -220,13 +220,13 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-surface-container-low px-margin-desktop py-32" id="features">
+      <section className="bg-surface-container-low px-margin-desktop py-20 md:py-32" id="features">
         <div className="mx-auto max-w-max-width">
-          <h2 className="mb-16 text-center font-headline-lg text-headline-lg">
+          <h2 className="mb-12 text-center font-headline-lg text-headline-lg-mobile sm:text-headline-lg md:mb-16">
             Intelligence Built for Privacy
           </h2>
           <div className="grid grid-cols-1 gap-6 md:grid-cols-3">
-            <div className="glass-panel flex flex-col justify-between rounded-2xl p-10 md:col-span-2">
+            <div className="glass-panel flex flex-col justify-between rounded-2xl p-6 sm:p-8 md:col-span-2 md:p-10">
               <div>
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
                   <Icon className="text-primary" name="psychology" />
@@ -238,7 +238,7 @@ export default function Home() {
                   your research.
                 </p>
               </div>
-              <div className="flex items-center gap-4 border-t border-outline-variant/35 pt-6">
+              <div className="flex flex-wrap items-center gap-3 border-t border-outline-variant/35 pt-6 sm:gap-4">
                 <span className="rounded bg-surface px-3 py-1 font-label-mono text-[10px] uppercase tracking-widest">
                   Semantic
                 </span>
@@ -264,7 +264,7 @@ export default function Home() {
               title="Audit Logs"
             />
 
-            <div className="glass-panel flex flex-col items-center gap-10 rounded-2xl p-10 md:col-span-2 md:flex-row">
+            <div className="glass-panel flex flex-col items-stretch gap-8 rounded-2xl p-6 sm:p-8 md:col-span-2 md:flex-row md:items-center md:gap-10 md:p-10">
               <div className="flex-1">
                 <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-on-secondary-container/10">
                   <Icon className="text-on-secondary-container" name="fact_check" />
@@ -288,22 +288,24 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[900px] px-margin-desktop py-32">
-        <div className="mb-16 text-center">
+      <section className="mx-auto max-w-[900px] px-margin-desktop py-20 md:py-32">
+        <div className="mb-12 text-center md:mb-16">
           <span className="font-label-mono text-sm uppercase tracking-widest text-primary">
             Query Simulation
           </span>
-          <h2 className="mt-4 font-headline-lg text-headline-lg">Ask your memory.</h2>
+          <h2 className="mt-4 font-headline-lg text-headline-lg-mobile sm:text-headline-lg">
+            Ask your memory.
+          </h2>
         </div>
         <div className="glass-panel overflow-hidden rounded-2xl shadow-2xl shadow-primary/5">
-          <div className="flex items-center gap-4 border-b border-outline-variant/35 bg-on-surface/5 p-6">
+          <div className="flex items-start gap-3 border-b border-outline-variant/35 bg-on-surface/5 p-4 sm:items-center sm:gap-4 sm:p-6">
             <Icon className="text-primary/60" name="search" />
             <p className="font-body-md text-on-surface">
               What have I been exploring about creativity and constraints?
             </p>
           </div>
-          <div className="space-y-6 p-8">
-            <div className="flex gap-4">
+          <div className="space-y-6 p-5 sm:p-8">
+            <div className="flex gap-3 sm:gap-4">
               <div className="flex h-8 w-8 flex-shrink-0 items-center justify-center rounded bg-primary/20">
                 <Image
                   alt="Icon"
@@ -358,7 +360,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="relative overflow-hidden bg-surface-dim py-32">
+      <section className="relative overflow-hidden bg-surface-dim py-20 md:py-32">
         <div className="pointer-events-none absolute inset-0 opacity-10">
           <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20%" cy="30%" fill="#00e3fd" r="2" />
@@ -371,7 +373,7 @@ export default function Home() {
           </svg>
         </div>
         <div className="relative z-10 mx-auto max-w-max-width px-margin-desktop text-center">
-          <h2 className="mb-6 font-headline-lg text-headline-lg">
+          <h2 className="mb-6 font-headline-lg text-headline-lg-mobile sm:text-headline-lg">
             See the invisible threads.
           </h2>
           <p className="mx-auto mb-16 max-w-2xl font-body-md text-on-surface-variant">
@@ -379,7 +381,7 @@ export default function Home() {
             maps non-obvious connections between disparate files, building a spatial map of
             your expertise.
           </p>
-          <div className="flex h-64 items-center justify-center">
+          <div className="flex h-48 items-center justify-center sm:h-64">
             <div className="relative h-32 w-32">
               <div className="absolute inset-0 animate-ping rounded-full border border-primary/20" />
               <div className="absolute inset-4 animate-pulse rounded-full border border-secondary-container/20" />
@@ -399,26 +401,28 @@ export default function Home() {
       </section>
 
       <section
-        className="border-t border-outline-variant/35 bg-surface-container-lowest px-margin-desktop py-24"
+        className="border-t border-outline-variant/35 bg-surface-container-lowest px-margin-desktop py-20 md:py-24"
         id="stack"
       >
         <div className="mx-auto max-w-max-width">
-          <div className="mb-16 flex flex-col items-end justify-between gap-8 md:flex-row">
+          <div className="mb-12 flex flex-col items-start justify-between gap-6 md:mb-16 md:flex-row md:items-end md:gap-8">
             <div>
               <span className="mb-4 block font-label-mono text-xs uppercase text-on-surface-variant">
                 The Engine Room
               </span>
-              <h2 className="font-headline-lg text-headline-lg">Deep-tech architecture.</h2>
+              <h2 className="font-headline-lg text-headline-lg-mobile sm:text-headline-lg">
+                Deep-tech architecture.
+              </h2>
             </div>
             <p className="max-w-sm font-body-md text-on-surface-variant">
               Built for speed, reliability, and extreme data density.
             </p>
           </div>
-          <div className="grid grid-cols-2 gap-4 md:grid-cols-3 lg:grid-cols-6">
+          <div className="grid grid-cols-1 gap-4 min-[420px]:grid-cols-2 md:grid-cols-3 lg:grid-cols-6">
             {["Tauri", "React", "Sidecar", "QVAC SDK", "LanceDB", "SQLite"].map(
               (name, index) => (
                 <div
-                  className="group rounded border border-outline-variant/35 bg-on-surface/5 p-6 transition-colors hover:bg-on-surface/10"
+                  className="group rounded border border-outline-variant/35 bg-on-surface/5 p-5 transition-colors hover:bg-on-surface/10 sm:p-6"
                   key={name}
                 >
                   <p className="mb-2 font-label-mono text-primary transition-transform group-hover:scale-110">
@@ -443,8 +447,8 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="mx-auto max-w-[800px] px-margin-desktop py-32" id="faq">
-        <h2 className="mb-16 text-center font-headline-lg text-headline-lg">
+      <section className="mx-auto max-w-[800px] px-margin-desktop py-20 md:py-32" id="faq">
+        <h2 className="mb-12 text-center font-headline-lg text-headline-lg-mobile sm:text-headline-lg md:mb-16">
           Frequently Asked
         </h2>
         <div className="space-y-4">
@@ -463,17 +467,19 @@ export default function Home() {
           />
         </div>
 
-        <div className="glass-panel relative mt-32 overflow-hidden rounded-3xl border-primary/20 p-12 text-center">
+        <div className="glass-panel relative mt-20 overflow-hidden rounded-2xl border-primary/20 p-6 text-center sm:p-10 md:mt-32 md:rounded-3xl md:p-12">
           <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 bg-primary/10 blur-3xl" />
-          <h2 className="mb-6 font-display-lg text-3xl">Ready to reclaim your focus?</h2>
+          <h2 className="mb-6 font-display-lg text-2xl sm:text-3xl">
+            Ready to reclaim your focus?
+          </h2>
           <p className="mx-auto mb-10 max-w-lg font-body-md text-on-surface-variant">
             Join the private beta and start building your personal memory graph today.
             Available for macOS, Windows, and Linux.
           </p>
-          <button className="mb-8 rounded-full bg-primary px-12 py-4 font-body-md font-bold text-on-primary transition-transform hover:scale-105">
+          <button className="mb-8 w-full rounded-full bg-primary px-8 py-4 font-body-md font-bold text-on-primary transition-transform hover:scale-105 sm:w-auto sm:px-12">
             Download Beta
           </button>
-          <div className="flex justify-center gap-8 opacity-40">
+          <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 opacity-40 sm:gap-x-8">
             <Platform icon="laptop_mac" name="macOS" />
             <Platform icon="window" name="Windows" />
             <Platform icon="terminal" name="Linux" />
@@ -481,7 +487,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="flex w-full flex-col items-center gap-8 border-t border-outline-variant/35 bg-surface-container-lowest px-margin-desktop py-16">
+      <footer className="flex w-full flex-col items-center gap-8 border-t border-outline-variant/35 bg-surface-container-lowest px-margin-desktop py-12 sm:py-16">
         <div className="flex items-center gap-3">
           <Image
             alt="Palimpsest Logo"
@@ -494,7 +500,7 @@ export default function Home() {
             Palimpsest
           </span>
         </div>
-        <div className="flex flex-wrap justify-center gap-x-12 gap-y-4">
+        <div className="flex flex-wrap justify-center gap-x-8 gap-y-4 sm:gap-x-12">
           {["macOS", "Windows", "Linux", "Privacy", "Security", "Documentation"].map(
             (item) => (
               <a
@@ -507,7 +513,7 @@ export default function Home() {
             ),
           )}
         </div>
-        <p className="mt-8 font-label-mono text-label-mono opacity-40">
+        <p className="mt-4 text-center font-label-mono text-label-mono opacity-40 sm:mt-8">
           &copy; 2024 Palimpsest. Local-first intelligence.
         </p>
       </footer>
@@ -527,7 +533,7 @@ function MetricCard({
   text: string;
 }) {
   return (
-    <div className="glass-panel rounded-xl border-outline-variant/35 p-6">
+    <div className="glass-panel rounded-xl border-outline-variant/35 p-5 sm:p-6">
       <Icon className={`mb-3 ${colorClass}`} name={icon} />
       <p className="mb-1 font-label-mono text-xs opacity-50">{label}</p>
       <p className="font-body-md text-sm">{text}</p>
@@ -566,17 +572,17 @@ function ProcessStep({
 
   return (
     <div
-      className={`scroll-reveal flex flex-col items-center gap-12 ${
+      className={`scroll-reveal flex items-start gap-5 md:items-center md:gap-12 ${
         reverse ? "md:flex-row-reverse" : "md:flex-row"
       }`}
     >
       <div
-        className={`glass-panel z-10 flex h-16 w-16 flex-shrink-0 items-center justify-center rounded-full ${borderClass}`}
+        className={`glass-panel z-10 flex h-14 w-14 flex-shrink-0 items-center justify-center rounded-full sm:h-16 sm:w-16 ${borderClass}`}
       >
-        <span className={`font-label-mono text-xl ${textClass}`}>{number}</span>
+        <span className={`font-label-mono text-lg sm:text-xl ${textClass}`}>{number}</span>
       </div>
       <div className={`flex-1 ${reverse ? "md:text-right" : ""}`}>
-        <h3 className="mb-4 font-headline-lg text-2xl">{title}</h3>
+        <h3 className="mb-3 font-headline-lg text-xl sm:mb-4 sm:text-2xl">{title}</h3>
         <p className="font-body-md text-on-surface-variant">{body}</p>
       </div>
       <div className="hidden flex-1 md:block">
@@ -602,11 +608,11 @@ function FeatureCard({
   title: string;
 }) {
   return (
-    <div className={`glass-panel rounded-2xl p-10 ${borderClass}`}>
+    <div className={`glass-panel rounded-2xl p-6 sm:p-8 md:p-10 ${borderClass}`}>
       <div className={`mb-6 flex h-12 w-12 items-center justify-center rounded-lg ${iconBg}`}>
         <Icon className={iconText} name={icon} />
       </div>
-      <h3 className="mb-4 font-headline-lg text-2xl">{title}</h3>
+      <h3 className="mb-4 font-headline-lg text-xl sm:text-2xl">{title}</h3>
       <p className="font-body-md text-on-surface-variant">{text}</p>
     </div>
   );
@@ -614,13 +620,15 @@ function FeatureCard({
 
 function SourceCard({ icon, meta, title }: { icon: IconName; meta: ReactNode; title: string }) {
   return (
-    <div className="group flex cursor-pointer items-start gap-3 rounded-lg border border-outline-variant/35 bg-surface-container p-4 transition-colors hover:border-primary/30">
+    <div className="group flex min-w-0 cursor-pointer items-start gap-3 rounded-lg border border-outline-variant/35 bg-surface-container p-4 transition-colors hover:border-primary/30">
       <Icon className="mt-1 text-sm text-primary" name={icon} />
-      <div>
-        <p className="mb-1 font-body-md text-sm text-on-surface transition-colors group-hover:text-primary">
+      <div className="min-w-0">
+        <p className="mb-1 break-words font-body-md text-sm text-on-surface transition-colors group-hover:text-primary">
           {title}
         </p>
-        <p className="font-label-mono text-[10px] text-on-surface-variant">{meta}</p>
+        <p className="break-words font-label-mono text-[10px] text-on-surface-variant">
+          {meta}
+        </p>
       </div>
     </div>
   );
@@ -637,11 +645,16 @@ function FaqItem({
 }) {
   return (
     <details className="glass-panel group rounded-xl" open={open}>
-      <summary className="flex cursor-pointer list-none items-center justify-between p-6 font-headline-lg text-lg transition-colors group-open:text-primary">
-        {question}
-        <Icon className="transition-transform group-open:rotate-180" name="expand_more" />
+      <summary className="flex cursor-pointer list-none items-center justify-between gap-4 p-5 font-headline-lg text-base transition-colors group-open:text-primary sm:p-6 sm:text-lg">
+        <span>{question}</span>
+        <Icon
+          className="shrink-0 transition-transform group-open:rotate-180"
+          name="expand_more"
+        />
       </summary>
-      <div className="px-6 pb-6 font-body-md text-on-surface-variant">{answer}</div>
+      <div className="px-5 pb-5 font-body-md text-on-surface-variant sm:px-6 sm:pb-6">
+        {answer}
+      </div>
     </details>
   );
 }

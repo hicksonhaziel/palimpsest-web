@@ -168,9 +168,9 @@
   --radius-xl: 0.5rem;
   --radius-full: 0.75rem;
 
-  --spacing-margin-desktop: 48px;
+  --spacing-margin-desktop: clamp(20px, 5vw, 48px);
   --spacing-unit: 4px;
-  --spacing-margin-mobile: 16px;
+  --spacing-margin-mobile: 20px;
   --spacing-gutter: 24px;
   --container-max-width: 1440px;
 
