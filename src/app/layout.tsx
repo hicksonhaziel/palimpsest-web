@@ -18,7 +18,7 @@ const jetBrainsMono = JetBrains_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "Palimpsest | Local-First Intelligence",
+  title: "Palimpsest",
   description:
     "A local-first AI memory for notes, files, screenshots, audio, and video.",
   icons: {
