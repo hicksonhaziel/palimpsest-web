@@ -1,9 +1,12 @@
 "use client";
 
 import Image from "next/image";
+import { Manrope } from "next/font/google";
 import { useEffect, type ReactNode } from "react";
 
 const appIconUrl = "/icon.png";
+const downloadUrl = "https://github.com/hicksonhaziel/Palimpsest/blob/main/BUILD.md";
+const manrope = Manrope({ subsets: ["latin"], display: "swap", variable: "--font-manrope" });
 const smallIconUrl =
   "https://lh3.googleusercontent.com/aida-public/AB6AXuD5MyoOWOznCXlf6O_XYBBJYhVy_Q000fu3dhZY69UvYWaT2lF9aKHb7yjfkc9eLeMqk-orc7j_8Bs2qdEMfLpRsrhGC8RkIqafAS071_9nJkkZbqcsBhhkpIPYjjo30baLuJiWTSlRemSSnfbUvilOf-m3DhIjDNWiGtA9Lehpilvtnd3kE4K2FJgPUNhiYsyE64DvwD-reiuvKxzed3nbjbmj3hVsDNvUR1jp5_yKvxXTMLxre1Kw_eI3NrKdCb2_Og";
 const centerNodeUrl =
@@ -58,8 +61,8 @@ export default function Home() {
   }, []);
 
   return (
-    <>
-      <nav className="fixed inset-x-0 top-0 z-50 border-b border-outline-variant/40 bg-surface/80 backdrop-blur-xl">
+    <main className={`${manrope.variable} ${manrope.className} min-h-screen bg-[#f5f7fb] text-on-surface dark:bg-background`}>
+      <nav className="fixed inset-x-0 top-0 z-50 border-b border-outline-variant/40 bg-[#f5f7fb]/85 backdrop-blur-xl dark:bg-surface/80">
         <div className="mx-auto flex w-full max-w-max-width items-center justify-between gap-4 px-margin-desktop py-3 sm:py-4">
           <div className="flex items-center gap-3">
             <Image
@@ -99,19 +102,18 @@ export default function Home() {
               FAQ
             </a>
           </div>
-          <button className="shrink-0 rounded-full bg-primary px-4 py-2.5 font-body-md text-xs font-bold text-on-primary transition-all hover:scale-105 active:scale-95 sm:px-6 sm:text-sm">
+          <a
+            className="shrink-0 rounded-md bg-primary px-4 py-2.5 font-body-md text-xs font-bold text-on-primary transition-all hover:opacity-90 active:opacity-80 sm:px-6 sm:text-sm"
+            href={downloadUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
             Download Beta
-          </button>
+          </a>
         </div>
       </nav>
 
       <header className="relative mx-auto max-w-[1000px] px-margin-desktop pb-20 pt-36 text-center sm:pb-24 sm:pt-44 md:pb-32 md:pt-48">
-        <div className="mb-8 inline-flex items-center gap-2 rounded-full border border-primary/20 bg-primary-container/30 px-3 py-1">
-          <span className="node-pulse h-2 w-2 rounded-full bg-secondary-container" />
-          <span className="font-label-mono text-label-mono uppercase text-primary">
-            v0.8.2 Now Local
-          </span>
-        </div>
         <h1 className="mb-6 font-display-lg text-[clamp(2.35rem,11vw,3rem)] leading-[1.05] text-on-surface sm:mb-8 md:text-display-lg">
           Your private memory, searchable <br className="hidden md:block" /> on your own
           machine.
@@ -122,16 +124,24 @@ export default function Home() {
           data to the cloud.
         </p>
         <div className="flex flex-col justify-center gap-4 sm:flex-row">
-          <button className="w-full rounded-full bg-primary px-8 py-4 font-body-md font-bold text-on-primary shadow-xl shadow-primary/10 transition-all hover:brightness-110 sm:w-auto sm:px-10">
+          <a
+            className="w-full rounded-md bg-primary px-8 py-4 font-body-md font-bold text-on-primary transition-all hover:opacity-90 active:opacity-80 sm:w-auto sm:px-10"
+            href={downloadUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
             Download Beta
-          </button>
-          <button className="w-full rounded-full border border-outline-variant/40 bg-on-surface/5 px-8 py-4 font-body-md text-on-surface backdrop-blur-md transition-all hover:bg-on-surface/10 sm:w-auto sm:px-10">
+          </a>
+          <a
+            className="w-full rounded-md bg-on-surface/5 px-8 py-4 font-body-md text-on-surface backdrop-blur-md transition-all hover:bg-on-surface/10 active:bg-on-surface/15 sm:w-auto sm:px-10"
+            href="#process"
+          >
             See how it works
-          </button>
+          </a>
         </div>
 
         <div className="relative mt-16 sm:mt-20 md:mt-24">
-          <div className="absolute inset-0 z-10 bg-gradient-to-t from-background via-transparent to-transparent" />
+          <div className="absolute inset-0 z-10 bg-gradient-to-t from-[#f5f7fb] via-transparent to-transparent dark:from-background" />
           <div className="glass-panel flex aspect-[4/3] items-center justify-center overflow-hidden rounded-2xl border-outline-variant/40 p-2 sm:aspect-[16/9] sm:p-4">
             <div className="relative flex h-full w-full items-center justify-center rounded-xl bg-surface-container">
               <div className="absolute inset-0 overflow-hidden opacity-20">
@@ -150,12 +160,12 @@ export default function Home() {
         </div>
       </header>
 
-      <section className="bg-surface-container-lowest px-margin-desktop py-20 md:py-32">
+      <section className="bg-[#eef2f7] px-margin-desktop py-20 dark:bg-surface-container-lowest md:py-32">
         <div className="mx-auto flex max-w-max-width flex-col items-center gap-12 md:flex-row md:gap-16">
           <div className="w-full md:w-1/2">
             <h2 className="mb-5 font-headline-lg text-headline-lg-mobile text-on-surface sm:text-headline-lg md:mb-6">
               Context is scattered. <br />
-              <span className="text-secondary-container">Memory is finite.</span>
+              <span className="text-primary">Memory is finite.</span>
             </h2>
             <p className="font-body-md text-body-md leading-relaxed text-on-surface-variant">
               We live our lives across a dozen apps, hundreds of browser tabs, and thousands
@@ -166,19 +176,19 @@ export default function Home() {
           <div className="grid w-full grid-cols-1 gap-4 sm:grid-cols-2 md:w-1/2">
             <MetricCard icon="tab" label="SCATTERED" text="60+ browser tabs open weekly" />
             <MetricCard
-              colorClass="text-secondary-container"
+              colorClass="text-primary"
               icon="folder_open"
               label="LOST"
               text="4.5 hours/week searching files"
             />
             <MetricCard
-              colorClass="text-tertiary"
+              colorClass="text-primary"
               icon="cloud_off"
               label="EXPOSED"
               text="Privacy traded for utility"
             />
             <MetricCard
-              colorClass="text-on-secondary-container"
+              colorClass="text-primary"
               icon="grain"
               label="RECALL"
               text="90% of information forgotten"
@@ -220,7 +230,7 @@ export default function Home() {
         </div>
       </section>
 
-      <section className="bg-surface-container-low px-margin-desktop py-20 md:py-32" id="features">
+      <section className="bg-[#eef2f7] px-margin-desktop py-20 dark:bg-surface-container-low md:py-32" id="features">
         <div className="mx-auto max-w-max-width">
           <h2 className="mb-12 text-center font-headline-lg text-headline-lg-mobile sm:text-headline-lg md:mb-16">
             Intelligence Built for Privacy
@@ -249,25 +259,25 @@ export default function Home() {
             </div>
 
             <FeatureCard
-              borderClass="border-secondary-container/10"
+              borderClass="border-primary/10"
               icon="hub"
-              iconBg="bg-secondary-container/10"
-              iconText="text-secondary-container"
+              iconBg="bg-primary/10"
+              iconText="text-primary"
               text="Visualise how ideas connect across different media types and timestamps."
               title="Constellation Graph"
             />
             <FeatureCard
               icon="history_edu"
-              iconBg="bg-tertiary/10"
-              iconText="text-tertiary"
+              iconBg="bg-primary/10"
+              iconText="text-primary"
               text="Complete transparency. Every AI action is logged and verifiable by you."
               title="Audit Logs"
             />
 
             <div className="glass-panel flex flex-col items-stretch gap-8 rounded-2xl p-6 sm:p-8 md:col-span-2 md:flex-row md:items-center md:gap-10 md:p-10">
               <div className="flex-1">
-                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-on-secondary-container/10">
-                  <Icon className="text-on-secondary-container" name="fact_check" />
+                <div className="mb-6 flex h-12 w-12 items-center justify-center rounded-lg bg-primary/10">
+                  <Icon className="text-primary" name="fact_check" />
                 </div>
                 <h3 className="mb-4 font-headline-lg text-2xl">Citations</h3>
                 <p className="font-body-md text-on-surface-variant">
@@ -277,7 +287,7 @@ export default function Home() {
               </div>
               <div className="w-full flex-1 rounded-xl border border-outline-variant/35 bg-surface-dim p-6">
                 <div className="mb-4 flex items-center gap-2">
-                  <span className="h-2 w-2 rounded-full bg-secondary-container" />
+                  <span className="h-2 w-2 rounded-full bg-primary" />
                   <span className="font-label-mono text-[10px]">VERIFIED SOURCE</span>
                 </div>
                 <div className="mb-2 h-2 w-3/4 rounded bg-on-surface/10" />
@@ -297,7 +307,7 @@ export default function Home() {
             Ask your memory.
           </h2>
         </div>
-        <div className="glass-panel overflow-hidden rounded-2xl shadow-2xl shadow-primary/5">
+        <div className="glass-panel overflow-hidden rounded-2xl">
           <div className="flex items-start gap-3 border-b border-outline-variant/35 bg-on-surface/5 p-4 sm:items-center sm:gap-4 sm:p-6">
             <Icon className="text-primary/60" name="search" />
             <p className="font-body-md text-on-surface">
@@ -319,11 +329,11 @@ export default function Home() {
               <div className="space-y-4 font-body-md leading-relaxed text-on-surface-variant">
                 <p>
                   Based on your notes from{" "}
-                  <span className="cursor-help border-b border-secondary-container/30 font-bold text-secondary-container">
+                  <span className="cursor-help border-b border-primary/30 font-bold text-primary">
                     Stravinsky&apos;s Lecture
                   </span>{" "}
                   and last week&apos;s{" "}
-                  <span className="cursor-help border-b border-secondary-container/30 font-bold text-secondary-container">
+                  <span className="cursor-help border-b border-primary/30 font-bold text-primary">
                     Design Sync
                   </span>
                   , you&apos;ve been focusing on &quot;Liberating Limitations&quot;.
@@ -365,7 +375,7 @@ export default function Home() {
           <svg height="100%" width="100%" xmlns="http://www.w3.org/2000/svg">
             <circle cx="20%" cy="30%" fill="#00e3fd" r="2" />
             <circle cx="80%" cy="40%" fill="#00e3fd" r="2" />
-            <circle cx="50%" cy="60%" fill="#d7baff" r="3" />
+            <circle cx="50%" cy="60%" fill="#00e3fd" r="3" />
             <circle cx="30%" cy="80%" fill="#00e3fd" r="2" />
             <line stroke="currentColor" strokeWidth="0.5" x1="20%" x2="50%" y1="30%" y2="60%" />
             <line stroke="currentColor" strokeWidth="0.5" x1="80%" x2="50%" y1="40%" y2="60%" />
@@ -384,7 +394,7 @@ export default function Home() {
           <div className="flex h-48 items-center justify-center sm:h-64">
             <div className="relative h-32 w-32">
               <div className="absolute inset-0 animate-ping rounded-full border border-primary/20" />
-              <div className="absolute inset-4 animate-pulse rounded-full border border-secondary-container/20" />
+              <div className="absolute inset-4 animate-pulse rounded-full border border-primary/20" />
               <div className="glass-panel relative flex h-full w-full items-center justify-center rounded-full">
                 <Image
                   alt="Center Node"
@@ -401,7 +411,7 @@ export default function Home() {
       </section>
 
       <section
-        className="border-t border-outline-variant/35 bg-surface-container-lowest px-margin-desktop py-20 md:py-24"
+        className="border-t border-outline-variant/35 bg-[#eef2f7] px-margin-desktop py-20 dark:bg-surface-container-lowest md:py-24"
         id="stack"
       >
         <div className="mx-auto max-w-max-width">
@@ -468,7 +478,6 @@ export default function Home() {
         </div>
 
         <div className="glass-panel relative mt-20 overflow-hidden rounded-2xl border-primary/20 p-6 text-center sm:p-10 md:mt-32 md:rounded-3xl md:p-12">
-          <div className="absolute right-0 top-0 h-32 w-32 -translate-y-1/2 translate-x-1/2 bg-primary/10 blur-3xl" />
           <h2 className="mb-6 font-display-lg text-2xl sm:text-3xl">
             Ready to reclaim your focus?
           </h2>
@@ -476,9 +485,14 @@ export default function Home() {
             Join the private beta and start building your personal memory graph today.
             Available for macOS, Windows, and Linux.
           </p>
-          <button className="mb-8 w-full rounded-full bg-primary px-8 py-4 font-body-md font-bold text-on-primary transition-transform hover:scale-105 sm:w-auto sm:px-12">
+          <a
+            className="mb-8 inline-block w-full rounded-md bg-primary px-8 py-4 font-body-md font-bold text-on-primary transition-all hover:opacity-90 active:opacity-80 sm:w-auto sm:px-12"
+            href={downloadUrl}
+            rel="noreferrer"
+            target="_blank"
+          >
             Download Beta
-          </button>
+          </a>
           <div className="flex flex-wrap justify-center gap-x-6 gap-y-3 opacity-40 sm:gap-x-8">
             <Platform icon="laptop_mac" name="macOS" />
             <Platform icon="window" name="Windows" />
@@ -487,7 +501,7 @@ export default function Home() {
         </div>
       </section>
 
-      <footer className="flex w-full flex-col items-center gap-8 border-t border-outline-variant/35 bg-surface-container-lowest px-margin-desktop py-12 sm:py-16">
+      <footer className="flex w-full flex-col items-center gap-8 border-t border-outline-variant/35 bg-[#eef2f7] px-margin-desktop py-12 dark:bg-surface-container-lowest sm:py-16">
         <div className="flex items-center gap-3">
           <Image
             alt="Palimpsest Logo"
@@ -504,7 +518,7 @@ export default function Home() {
           {["macOS", "Windows", "Linux", "Privacy", "Security", "Documentation"].map(
             (item) => (
               <a
-                className="font-label-mono text-label-mono text-on-surface-variant transition-colors hover:text-secondary-fixed"
+                className="font-label-mono text-label-mono text-on-surface-variant transition-colors hover:text-primary"
                 href="#"
                 key={item}
               >
@@ -514,10 +528,10 @@ export default function Home() {
           )}
         </div>
         <p className="mt-4 text-center font-label-mono text-label-mono opacity-40 sm:mt-8">
-          &copy; 2024 Palimpsest. Local-first intelligence.
+          &copy; 2026 Palimpsest. Local intelligence.
         </p>
       </footer>
-    </>
+    </main>
   );
 }
 
@@ -556,19 +570,19 @@ function ProcessStep({
 }) {
   const textClass = {
     primary: "text-primary",
-    "secondary-container": "text-secondary-container",
-    tertiary: "text-tertiary",
+    "secondary-container": "text-primary",
+    tertiary: "text-primary",
   }[accent];
   const borderClass = {
     primary: "border-primary/30",
-    "secondary-container": "border-secondary-container/30",
-    tertiary: "border-tertiary/30",
+    "secondary-container": "border-primary/30",
+    tertiary: "border-primary/30",
   }[accent];
   const gradientClass = reverse
-    ? "bg-gradient-to-l from-secondary-container/40 to-transparent"
+    ? "bg-gradient-to-l from-primary/40 to-transparent"
     : accent === "primary"
       ? "bg-gradient-to-r from-primary/40 to-transparent"
-      : "bg-gradient-to-r from-tertiary/40 to-transparent";
+      : "bg-gradient-to-r from-primary/40 to-transparent";
 
   return (
     <div
